@@ -5,8 +5,9 @@ RUN apt-get update && apt-get install -y \
     libblas-dev \
     liblapack-dev \
     gfortran \
-    cython \
     && rm -rf /var/lib/apt/lists/*
+
+RUN pip install cython
 
 WORKDIR /app
 

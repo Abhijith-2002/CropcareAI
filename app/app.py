@@ -1,6 +1,7 @@
 # Importing essential libraries and modules
 
-from flask import Flask, render_template, request, Markup
+from flask import Flask, render_template, request
+from markupsafe import MarkUp
 import numpy as np
 import pandas as pd
 from utils.disease import disease_dic
@@ -67,7 +68,7 @@ disease_model.eval()
 
 # Loading crop recommendation model
 
-crop_recommendation_model_path = 'models/RandomForest.pkl'
+crop_recommendation_model_path = 'models/crop_recommendation_model.pkl'
 crop_recommendation_model = pickle.load(
     open(crop_recommendation_model_path, 'rb'))
 
